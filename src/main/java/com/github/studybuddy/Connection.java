@@ -1,8 +1,4 @@
-package com.github;
-
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import org.bson.Document;
+package com.github.studybuddy;
 
 import java.util.ArrayList;
 import java.util.List;

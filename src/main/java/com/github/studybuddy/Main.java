@@ -1,4 +1,4 @@
-package com.github;
+package com.github.studybuddy;
 
 public class Main {
     public static void main(String[] args) {
