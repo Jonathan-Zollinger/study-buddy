@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ResourceBundle properties = ResourceBundle.getBundle("config"); //put config.properties in resources
 
-        DgraphClient dgraphClient = DgraphUtils.initiateClient(properties.getString("dGraphEndpoint"),
+        DgraphClient dgraphClient = getDgraphClient(properties.getString("dGraphEndpoint"),
                 properties.getString("bearerToken"));
         System.out.println(importStandardWorks());
     }
@@ -56,7 +56,15 @@ public class Main {
         private List<Verse> verses;
     }
 
-        DgraphProto.Version version = dgraphClient.checkVersion();
-        System.out.println(version);
+    @Data
+    @NoArgsConstructor
+        private class Verse {
+        private String id;
+        private int number;
+        private String title;
+        private String shortTitle;
+        private String text;
+        private Chapter chapter;
     }
+
 }
